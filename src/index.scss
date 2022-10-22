@@ -1,0 +1,188 @@
+:root {
+  --bg-color: #1F2137;
+  --main-ff: system-ui;
+  --btn-bg-color: #018DEC;
+  --btn-disabled-bg-color: #6f8da0;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.pointer {
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: white;
+  margin: 0;
+  font-family: var(--main-ff);
+}
+
+.header100 {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+.header200 {
+  font-size: 2.75rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.loadingTextSpinner {
+  margin-left: 0.5rem;
+}
+
+/* ######################## */
+
+// ##########  s-app  ##########
+
+.App {
+  min-height: 60rem;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.questionMark {
+  position: absolute;
+  z-index: -1;
+}
+
+.questionMark.topLeft {
+  top: 0.5vh;
+  left: 0.5vw;
+}
+
+.questionMark.rightBottom {
+  transform: scale(1.5) rotate(65deg);
+  bottom: 0.5rem;
+  right: 0px;
+}
+
+.btnBlue {
+  color: white;
+  font-weight: 600;
+  background-color: var(--btn-bg-color);
+  font-family: var(--main-ff);
+  border: none;
+  border-radius: 1.5rem;
+  min-width: 15rem;
+  min-height: 2.5rem;
+}
+
+.btnBlue:disabled {
+  background-color: var(--btn-disabled-bg-color);
+  box-shadow: none;
+  color: black;
+}
+
+.btnShadow {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+}
+
+.btnShadow:hover:not([disabled]),
+.btnShadow:active:not([disabled]) {
+  box-shadow: 0 2px 25px rgba(255, 182, 14, 0.7);
+  color:rgb(255, 182, 14);
+}
+
+// ##########  e-app  ##########
+
+// ##########  s-welcome-page  ##########
+
+.headerWelcome {
+  position: relative;
+}
+
+.btnDiv {
+  margin-top: 4rem;
+}
+
+.minifigImgContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -19.8vh;
+}
+
+.minifigLegoHeader {
+  max-height: 15rem;
+  padding-left: 478px;
+}
+
+// ##########  e-welcome-page  ##########
+
+// ##########  s-choose-minifig  ##########
+
+.headerContainer {
+  margin-bottom: 5rem;
+}
+
+.minifigTiles {
+
+  .minifigTile {
+    min-width: 20rem;
+    min-height: 20rem;
+    background-color: white;
+    border-radius: 1.5rem;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  }
+  .minifigTile:hover {
+    box-shadow: 0 0 35px var(--btn-disabled-bg-color);
+  }
+  .minifigTile.selectedTile {
+    box-shadow: 0 0 35px rgba(255, 182, 14, 1);
+  }
+}
+
+// ##########  e-choose-minifig  ##########
+
+// ##########  s-shipment-form  ##########
+// ##########  e-shipment-form  ##########
+
+
+// ##########  s-media-responsive  ##########
+
+@media screen and (max-width: 594px) {
+  .minifigLegoHeader {
+    padding-left: 260px;
+  }
+  .header200 {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .minifigImgContainer {
+    top: -23.8vh;
+  }
+  .minifigLegoHeader {
+    padding-left: 0;
+  }
+  .header200 {
+    font-size: 10vw;
+  }
+}
+
+@media screen and (max-width: 364px) {
+  .minifigImgContainer {
+    top: -60vw;
+  }
+  .minifigLegoHeader {
+    max-height: 65vw;
+  }
+  .btnBlue {
+    min-width: 66vw;
+    min-height: 10.7vw;
+    font-size: 4.5vw;
+  }
+  .loadingTextSpinner {
+    display: none;
+  }
+}
+
+// ##########  e-media-responsive  ##########
