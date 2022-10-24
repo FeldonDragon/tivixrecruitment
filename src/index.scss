@@ -1,0 +1,403 @@
+:root {
+  --bg-color: #1f2137;
+  --main-ff: system-ui;
+  --btn-bg-color: #018DEC;
+  --btn-disabled-bg-color: #6f8da0;
+  --gold-color: #ffb300;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import 'react-notifications/lib/notifications.css';
+
+a, a:hover {
+  text-decoration: none;
+  color: var(--gold-color);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.goldFont {
+  color: var(--gold-color);
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fillContentHeight {
+  flex-grow: 1;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: white;
+  margin: 0;
+  font-family: var(--main-ff);
+}
+
+.header100 {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+.header200 {
+  font-size: 2.75rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.loadingTextSpinner {
+  margin-left: 0.5rem;
+}
+
+/* ######################## */
+
+// ##########  s-app  ##########
+
+.App {
+  min-height: 60rem;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.questionMark {
+  position: absolute;
+  z-index: -1;
+}
+
+.questionMark.topLeft {
+  top: 0.5vh;
+  left: 0.5vw;
+}
+
+.questionMark.rightBottom {
+  transform: scale(1.5) rotate(65deg);
+  bottom: 0.5rem;
+  right: 0px;
+}
+
+.btnBlue {
+  color: white;
+  font-weight: 600;
+  background-color: var(--btn-bg-color);
+  font-family: var(--main-ff);
+  border: none;
+  border-radius: 1.5rem;
+  min-width: 15rem;
+  min-height: 2.5rem;
+}
+
+.btnBlue:disabled {
+  background-color: var(--btn-disabled-bg-color);
+  box-shadow: none;
+  color: black;
+}
+
+.btnShadow {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+}
+
+.btnShadow:hover:not([disabled]),
+.btnShadow:active:not([disabled]) {
+  box-shadow: 0 2px 25px rgba(255, 179, 0, 0.7);
+  color:rgb(255, 179, 0);
+}
+
+// ##########  e-app  ##########
+
+// ##########  s-welcome-page  ##########
+
+.headerWelcome {
+  position: relative;
+}
+
+.btnDiv {
+  margin-top: 4rem;
+}
+
+.minifigImgContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -19.8vh;
+}
+
+.minifigLegoHeader {
+  max-height: 15rem;
+  padding-left: 478px;
+}
+
+// ##########  e-welcome-page  ##########
+
+// ##########  s-choose-minifig  ##########
+
+.headerContainer {
+  margin-bottom: 5rem;
+}
+
+.minifigTiles {
+  .minifigTile {
+    min-width: 20rem;
+    min-height: 20rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  }
+  .minifigTile:hover {
+    box-shadow: 0 0 35px var(--btn-disabled-bg-color);
+  }
+  .minifigTile.selectedTile {
+    box-shadow: 0 0 35px rgba(255, 179, 0, 1);
+  }
+
+  .minifigImg {
+    max-width: 13rem;
+    max-height: 13rem;
+  }
+  .minifigImg img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .minifigNameLabel {
+    color:black;
+    font-weight: 600;
+  }
+}
+
+.showDetailsLink {
+  color: var(--gold-color);
+  font-weight: 600;
+}
+
+.showDetailsLink:hover {
+  $gold-shadow: #6e4202;
+  text-shadow: -1px -1px 0 $gold-shadow, 
+    1px -1px 0 $gold-shadow, 
+    -1px 1px 0 $gold-shadow, 
+    1px 1px 0 $gold-shadow;
+}
+
+.minifigImgModal {
+  max-width: 20vw;
+}
+.minifigImgModal img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 2rem;
+  margin: 1rem;
+  border: 4px solid var(--gold-color);
+}
+
+.borderLeftLine {
+  border-radius: 2rem;
+  border-left: 2px solid gray;
+}
+.borderRightLine {
+  border-radius: 2rem;
+  border-right: 2px solid gray;
+}
+
+// ##########  e-choose-minifig  ##########
+
+// ##########  s-shipment-form  ##########
+
+.summaryHeaderContainer {
+  margin-top: 2rem;
+}
+
+.formMainContainer {
+  min-width: 95vw;
+}
+
+.shipmentForm {
+  min-height: 70vh;
+}
+
+.shippingFormular {
+  font-family: var(--main-ff);
+  font-weight: 600;
+}
+
+.shipmentFormChild {
+  $margin-x: 6rem;
+  margin-right: $margin-x;
+  margin-left: $margin-x;
+}
+
+.formLabelContainer {
+  margin-left: 0.45rem;
+}
+
+.formInputContainer {
+  input {
+    min-height: 2.75rem;
+    border-radius: 0.4rem;
+  }
+}
+
+.summaryContent {
+  min-height: 95vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: -3rem;
+  margin-right: 2rem;
+  min-width: 17em;
+  max-width: 25em;
+  color: var(--bg-color);
+  border-radius: 1rem;
+  background-color: white;
+
+  .btnBlue {
+    min-height: 3rem;
+  }
+}
+
+.summaryContentNoHeader {
+  font-weight: 600;
+}
+
+.summaryImg {
+  max-width: fit-content;
+}
+.summaryImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.btnNoShadow:hover:not([disabled]) {
+  color: var(--gold-color);
+}
+
+.formErrorMessage {
+  font-size: 10px;
+  color: var(--bs-danger);
+  margin: 0;
+}
+// ##########  e-shipment-form  ##########
+
+// ##########  s-modal  ##########
+
+.customModal {
+  position: absolute;
+
+  top: 18vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(31, 33, 55, 0.97);
+  border-radius: 2rem;
+}
+.customModal:focus-visible {
+  outline: none;
+}
+
+.customModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btnCloseCustomModal {
+  position: relative;
+  top: 20px;
+  max-width: 10vw;
+}
+
+.customModalHeader {
+  text-align: center;
+}
+
+// ##########  e-modal  ##########
+
+// ##########  s-media-responsive  ##########
+
+@media screen and (max-width: 1120px) {
+  .minifigTiles .minifigTile {
+    min-width: 27vw;
+    min-height: 30vw;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .headerContainer {
+    margin-top: 2rem;
+  }
+  .btnBlue {
+    margin-bottom: 5rem;
+  }
+  .minifigTiles {
+    flex-direction: column !important;
+    .minifigTile {
+      min-width: 27vw;
+      min-height: 30vw;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .changeToCol {
+    flex-direction: column !important;
+  }
+  .imgCol {
+    width: 100%;
+  }
+  .borderLeftLine {
+    border-left: none;
+  }
+  .borderRightLine {
+    border-right: none;
+  }
+}
+
+@media screen and (max-width: 594px) {
+  .minifigLegoHeader {
+    padding-left: 260px;
+  }
+  .header200 {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .minifigImgContainer {
+    top: -23.8vh;
+  }
+  .minifigLegoHeader {
+    padding-left: 0;
+  }
+  .header200 {
+    font-size: 10vw;
+  }
+}
+
+@media screen and (max-width: 364px) {
+  .minifigImgContainer {
+    top: -60vw;
+  }
+  .minifigLegoHeader {
+    max-height: 65vw;
+  }
+  .btnBlue {
+    min-width: 66vw;
+    min-height: 10.7vw;
+    font-size: 4.5vw;
+  }
+  .loadingTextSpinner {
+    display: none;
+  }
+  .minifigTiles .minifigImg {
+    max-width: 50vw;
+    max-height: 15vh;
+  }
+}
+
+// ##########  e-media-responsive  ##########

@@ -1,0 +1,27 @@
+{   
+    "compilerOptions": 
+    {     
+        "types": [ 
+            "node"
+        ],
+        "jsx": "react",
+        "module": "commonjs",
+        "target": "es5",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": false,
+        "strictPropertyInitialization": false,
+    }, 
+    "include": [
+        "./src/*/"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
